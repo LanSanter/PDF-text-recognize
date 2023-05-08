@@ -3,7 +3,7 @@ import pytesseract
 from PIL import Image
 import os
 # 將PDF檔轉換成PIL圖像對象
-pages = convert_from_path(r'C:\Users\Tommy\Desktop\HW\input.pdf')
+pages = convert_from_path(r'input.pdf')
 num_pages = 0
 # 逐頁將PIL圖像對象轉換成PNG格式的圖片檔
 for i, page in enumerate(pages):
@@ -23,6 +23,7 @@ for i in range(1,num_pages+1):
 
 # 設定Tesseract的執行路徑（可選）
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+# 修改你要辨識的語言
 tessdata_dir_config = r'--tessdata-dir "C:\\Program Files\\Tesseract-OCR\\tessdata" -l chi_tra_vert'
 
 
